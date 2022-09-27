@@ -1,9 +1,16 @@
 import { Request, Response, Router } from "express";
+import UserController from "./controllers/UserController";
 const route = Router()
-const enve = process.env.PROJECT_NAME
 
-route.get('/', (req: Request, res: Response) => {
-    res.send(`${enve}`)
-})
+
+route.post('/user', UserController.create);
+
+route.get('/user', UserController.findAll);
+
+route.get('/user/:id', UserController.findById);
+
+route.put('/user/:id', UserController.updateById);
+
+route.delete('/user/:id', UserController.deleteById);
 
 export { route };
