@@ -5,7 +5,6 @@
   "main": "index.js",
   "scripts": {
     "start": "node dist/src/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "ts-node-dev -r dotenv/config --respawn --transpile-only src/server.ts",
     "build": "tsc"
   },

@@ -6,7 +6,7 @@ class UserController {
         const user = await UserModel.findAll();
         return user.length > 0 
         ? res.status(200).json(user) 
-        : res.status(204).send()
+        : res.status(204).send();
     }
 
     async findById(req: Request, res: Response) {
@@ -29,8 +29,9 @@ class UserController {
                 id: id
             }
         });
+
         return user ? res.status(204).send()
-        : res.status(404).send()
+        : res.status(404).send();
     }
 
     async deleteById(req:Request, res: Response) {
@@ -42,7 +43,7 @@ class UserController {
         });
 
         return user ? res.status(204).send()
-        : res.status(404).send()
+        : res.status(404).send();
     }
 
     async create(req:Request, res: Response) {
@@ -52,8 +53,9 @@ class UserController {
             name,
             age,
         });
-        return res.status(201).json(user)
-    }
-}
 
-export default new UserController()
+        return res.status(201).json(user);
+    }
+};
+
+export default new UserController();
